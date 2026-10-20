@@ -19,6 +19,13 @@ async function MovieDetails({ params }: MoviePageProps) {
       )
     : [];
 
+  const formatRuntime = (minutes: number): string => {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    return `${hours}h ${remainingMinutes}m`;
+  };
+
   return (
     movieData && (
       <div className="min-h-screen bg-slate-950 px-4 py-16 text-slate-100 sm:px-8 lg:px-16">
@@ -35,7 +42,7 @@ async function MovieDetails({ params }: MoviePageProps) {
                 <span>•</span>
                 <span>{movieData.language}</span>
                 <span>•</span>
-                <span>{movieData.duration}</span>
+                <span>{formatRuntime(movieData.duration)}</span>
               </div>
             </div>
 
