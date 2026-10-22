@@ -64,3 +64,23 @@ export const PATCH = async (
     );
   }
 };
+
+export const DELETE = async (
+  _req: Request,
+  { params }: { params: { id: string } },
+) => {
+  const { id } = await params;
+
+  const userIndex = employees.findIndex((e) => e.id === Number(id));
+
+  if (userIndex === -1) {
+    return Response.json({ message: "User not found" }, { status: 404 });
+  }
+
+  const deletedUser = employees.splice(userIndex, 1)[0];
+
+  return Response.json({
+    message: "User deleted successfully",
+    data: deletedUser,
+  });
+};
