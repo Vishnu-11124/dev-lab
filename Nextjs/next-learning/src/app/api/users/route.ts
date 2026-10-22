@@ -1,7 +1,9 @@
 import { employees } from "@/constants/data";
 
 export const GET = async () => {
-  return Response.json(employees);
+  return Response.json({
+    data: employees,
+  });
 };
 
 export const POST = async (req: Request) => {
