@@ -1,8 +1,18 @@
+
+import { title } from "process";
 import { Suspense } from "react";
 
 interface PageProps {
   params: Promise<{ devId: string }>;
 }
+
+export const generateMetadata = async ({ params }: PageProps) => {
+  const { devId } = await params;
+
+  return {
+    title: `Game: ${devId}`,
+  };
+};
 
 async function DeveloperDetails({ params }: PageProps) {
   const { devId } = await params;
