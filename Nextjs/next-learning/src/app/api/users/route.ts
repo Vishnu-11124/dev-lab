@@ -1,10 +1,11 @@
 import { employees } from "@/constants/data";
+import { NextRequest } from "next/server";
 
-export const GET = async () => {
-  return Response.json({
-    data: employees,
-  });
-};
+// export const GET = async () => {
+//   return Response.json({
+//     data: employees,
+//   });
+// };
 
 export const POST = async (req: Request) => {
   try {
@@ -51,4 +52,15 @@ export const POST = async (req: Request) => {
       { status: 400 },
     );
   }
+};
+
+export const GET = async (req: NextRequest) => {
+  const searchParams = req.nextUrl.searchParams;
+  const query = searchParams.get("query");
+
+  const result = query
+    ? employees.filter((e) => e.fullName.toLowerCase().includes(query))
+    : employees;
+
+  return new Response(JSON.stringify(result));
 };
