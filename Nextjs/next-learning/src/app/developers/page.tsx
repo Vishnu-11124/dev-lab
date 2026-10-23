@@ -1,6 +1,12 @@
 import DevCard from "@/components/DevCard";
 import { developers } from "@/constants/data";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Developers",
+  description: "The team behind the success",
+};
 
 const DevelopersPage = () => {
   return (
