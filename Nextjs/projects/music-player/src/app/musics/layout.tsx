@@ -1,15 +1,23 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react";
 
-const MusicLayout = ({children, sidebar}: {children: ReactNode, sidebar: ReactNode}) => {
+const MusicLayout = ({
+  children,
+  sidebar,
+  songs,
+}: {
+  children: ReactNode;
+  sidebar: ReactNode;
+  songs: ReactNode;
+}) => {
   return (
-    <div className='flex'>
+    <div className="flex">
       {sidebar}
       <div>
-
+        {children}
+        <div>{songs}</div>
       </div>
-      {children}
     </div>
-  )
-}
+  );
+};
 
-export default MusicLayout
+export default MusicLayout;
