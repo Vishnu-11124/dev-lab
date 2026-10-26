@@ -4,7 +4,7 @@ import React from "react";
 const Player = () => {
   return (
     <div className="flex shrink-0 items-center gap-4 border-t border-[#38433E] bg-[#242C29] px-4 py-3 sm:gap-6 sm:px-6">
-      <div className="h-12 w-12 shrink-0 rounded-lg border border-[#38433E] bg-gradient-to-br from-[#33403A] via-[#2A332F] to-[#1B211F]"></div>
+      <div className="h-12 w-12 shrink-0 rounded-lg border border-[#38433E] bg-linear-to-br from-[#33403A] via-[#2A332F] to-[#1B211F]"></div>
 
       <div className="flex shrink-0 items-center gap-3 sm:gap-4">
         <SkipBack className="h-5 w-5 cursor-pointer text-[#8E9A93] transition hover:text-[#E4E8E2]" />
