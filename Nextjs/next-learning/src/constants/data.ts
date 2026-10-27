@@ -1,4 +1,4 @@
-import { Developer, EmployeeDetails } from "@/types/type";
+import { Developer, EmployeeDetails, Product } from "@/types/type";
 
 export const developers: Developer[] = [
   {
@@ -332,5 +332,92 @@ export const employees: EmployeeDetails[] = [
     location: "Coimbatore, India",
     salary: 400000,
     status: "Active",
+  },
+];
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: "Nova X1 Pro",
+    price: 74999,
+    description: "6.7-inch AMOLED display, flagship chipset, 50MP triple camera and 5000mAh battery with fast charging.",
+    image: "https://picsum.photos/seed/phone1/400/400",
+  },
+  {
+    id: 2,
+    name: "Aura S24",
+    price: 59999,
+    description: "Slim aluminium body with a 120Hz display, 12GB RAM and an all-day battery for heavy users.",
+    image: "https://picsum.photos/seed/phone2/400/400",
+  },
+  {
+    id: 3,
+    name: "Pulse Lite 5G",
+    price: 17999,
+    description: "Affordable 5G phone with a smooth 90Hz screen, 8GB RAM and a clean, lightweight interface.",
+    image: "https://picsum.photos/seed/phone3/400/400",
+  },
+  {
+    id: 4,
+    name: "Zenith Ultra",
+    price: 109999,
+    description: "Premium titanium frame, 200MP camera system, 1TB storage and a stunning 2K LTPO display.",
+    image: "https://picsum.photos/seed/phone4/400/400",
+  },
+  {
+    id: 5,
+    name: "Orbit M7",
+    price: 23999,
+    description: "Mid-range performer with a 64MP camera, stereo speakers and 67W rapid charging.",
+    image: "https://picsum.photos/seed/phone5/400/400",
+  },
+  {
+    id: 6,
+    name: "Flux Fold 2",
+    price: 139999,
+    description: "Foldable design with a 7.6-inch inner screen, multitasking mode and a sleek hinge.",
+    image: "https://picsum.photos/seed/phone6/400/400",
+  },
+  {
+    id: 7,
+    name: "Echo A15",
+    price: 11999,
+    description: "Budget-friendly everyday phone with a large 6.6-inch display and a 6000mAh long-lasting battery.",
+    image: "https://picsum.photos/seed/phone7/400/400",
+  },
+  {
+    id: 8,
+    name: "Vertex Gaming Z",
+    price: 42999,
+    description: "Built for gamers with a 144Hz display, vapor cooling, shoulder triggers and 16GB RAM.",
+    image: "https://picsum.photos/seed/phone8/400/400",
+  },
+  {
+    id: 9,
+    name: "Lumen Camera Edition",
+    price: 54999,
+    description: "Photography-focused phone with a 1-inch sensor, optical zoom and pro video modes.",
+    image: "https://picsum.photos/seed/phone9/400/400",
+  },
+  {
+    id: 10,
+    name: "Breeze Mini",
+    price: 31999,
+    description: "Compact 5.9-inch flagship that fits one-handed use without compromising on power.",
+    image: "https://picsum.photos/seed/phone10/400/400",
+  },
+  {
+    id: 11,
+    name: "Atlas Rugged 5G",
+    price: 36999,
+    description: "Water, dust and drop-resistant body with a bright display and a massive 8000mAh battery.",
+    image: "https://picsum.photos/seed/phone11/400/400",
+  },
+  {
+    id: 12,
+    name: "Prime Edge 8",
+    price: 27999,
+    description: "Curved AMOLED screen, 108MP camera, in-display fingerprint sensor and 5G support.",
+    image: "https://picsum.photos/seed/phone12/400/400",
   },
 ];
