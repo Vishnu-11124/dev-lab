@@ -27,7 +27,7 @@ export default function Page() {
     <main className="p-6">
       <h1 className="mb-4 text-2xl font-bold">Server Data Fetching</h1>
 
-      <Suspense fallback={<p>Loading todos...</p>}>
+      <Suspense fallback={<p>Loading Todos...</p>}>
         <ServerData />
       </Suspense>
     </main>
