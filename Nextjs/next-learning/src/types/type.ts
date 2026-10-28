@@ -39,3 +39,10 @@ export type Product = {
   description: string;
   image: string;
 };
+
+export interface TodoDetails {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
