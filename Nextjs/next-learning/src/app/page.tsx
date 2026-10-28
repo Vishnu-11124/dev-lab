@@ -16,6 +16,9 @@ const Home = () => {
         <button className="m-2 px-3 py-2 bg-violet-600 text-white text-xl font-bold rounded-2xl">
           <Link href="/client-data-fetching">Client Data</Link>
         </button>
+        <button className="m-2 px-3 py-2 bg-violet-600 text-white text-xl font-bold rounded-2xl">
+          <Link href="/server-data-fetching">Server Data</Link>
+        </button>
       </div>
       <div>
         <Image
