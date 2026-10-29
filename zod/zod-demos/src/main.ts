@@ -36,28 +36,36 @@ import { z } from "zod";
 
 // ------------------------------------------------------------------------
 
-const userSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  job: z.string().default("NA"),
-  address: z.object({
-    place: z.string(),
-    pincode: z.string(),
-  }),
-  age: z.number().optional(),
-});
+// const userSchema = z.object({
+//   name: z.string(),
+//   email: z.string().email(),
+//   job: z.string().default("NA"),
+//   address: z.object({
+//     place: z.string(),
+//     pincode: z.string(),
+//   }),
+//   age: z.number().optional(),
+// });
 
-const user1 = {
-  name: "Zoa",
-  email: "zoa@gmail.com",
-  // job: 'Designer',
-  address: {
-    place: "Goa",
-    pincode: "678456",
-  },
-  // age: 23
-};
+// const user1 = {
+//   name: "Zoa",
+//   email: "zoa@gmail.com",
+//   // job: 'Designer',
+//   address: {
+//     place: "Goa",
+//     pincode: "678456",
+//   },
+//   // age: 23
+// };
 
-console.log("user1:", userSchema.parse(user1));
+// console.log("user1:", userSchema.parse(user1));
+
+// ------------------------------------------------------------------------
+
+const mernSchema = z.array(z.string())
+
+const mernStack = ['reactjs', 'nodejs', 'express', 'mongodb']
+
+console.log("MERN Stack:", mernSchema.parse(mernStack))
 
 // ------------------------------------------------------------------------
