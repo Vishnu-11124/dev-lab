@@ -62,10 +62,34 @@ import { z } from "zod";
 
 // ------------------------------------------------------------------------
 
-const mernSchema = z.array(z.string())
+const mernSchema = z.array(z.string());
 
-const mernStack = ['reactjs', 'nodejs', 'express', 'mongodb']
+const mernStack = ["reactjs", "nodejs", "express", "mongodb"];
 
-console.log("MERN Stack:", mernSchema.parse(mernStack))
+console.log("MERN Stack:", mernSchema.parse(mernStack));
 
 // ------------------------------------------------------------------------
+
+const roleSchema = z.enum(["admin", "user", "guest"]);
+
+const user1 = "admin";
+
+console.log("user1", roleSchema.parse(user1));
+
+// ------------------------------------------------------------------------
+
+const userSchema = z.object({
+  name: z.string().optional(),
+  email: z.string().email(),
+  password: z.string().min(8),
+});
+
+type UserDetails = z.infer<typeof userSchema>;
+
+const user23: UserDetails = {
+  name: "Rooben",
+  email: "rooben34@gmail.com",
+  password: "rooben675@#",
+};
+
+console.log(user23);
