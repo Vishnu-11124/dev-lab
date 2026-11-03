@@ -39,3 +39,28 @@ export const getMarriedUsers = async (_req: Request, res: Response) => {
     });
   }
 };
+
+export const updateUser = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { age } = req.body;
+
+    if (!age) {
+      return res.status(400).json({
+        message: "Age is required",
+      });
+    }
+
+    const updatedUser = await prisma.user.update({
+      where: { id: Number(id) },
+      data: { age },
+    });
+
+    return res.status(200).json({
+      user: updatedUser,
+      message: "User updated successfully",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
