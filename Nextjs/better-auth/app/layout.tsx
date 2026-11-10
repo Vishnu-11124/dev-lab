@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 // @ts-expect-error CSS side-effect imports are handled by Next.js.
 import "./globals.css";
-import Navigation from "./components/Navigation";
 import { headers } from "next/headers";
+import Navigation from "@/components/Navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

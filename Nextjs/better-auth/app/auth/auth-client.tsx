@@ -25,7 +25,7 @@ export default function AuthClientPage() {
       setError(
         `Error authenticating with ${provider}: ${
           err instanceof Error ? err.message : "Unknown error"
-        }`
+        }`,
       );
     } finally {
       setIsLoading(false);
@@ -47,7 +47,7 @@ export default function AuthClientPage() {
       setError(
         `Authentication error: ${
           err instanceof Error ? err.message : "Unknown error"
-        }`
+        }`,
       );
     } finally {
       setIsLoading(false);
