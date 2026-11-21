@@ -87,6 +87,7 @@ export const verifyOTP = async (req, res) => {
       });
     }
 
+    await redis.del(`otp:${email}`)
     return res.json({ message: "Otp Matched" });
   } catch (error) {
     console.log("Failed to send otp");
