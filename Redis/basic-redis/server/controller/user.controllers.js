@@ -10,6 +10,8 @@ export const createUser = async (req, res) => {
       password,
     });
 
+    await redis.del("user:all");
+
     return res.status(201).json({
       status: 201,
       data: user,
