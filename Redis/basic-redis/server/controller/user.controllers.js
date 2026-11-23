@@ -1,16 +1,20 @@
 import redis from "../config/redis.js";
 import User from "../model/user.model.js";
+import emailQueue from "../queue.js";
 
 export const createUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
+
+    await redis.del("user:all");
+
     const user = await User.create({
       username,
       email,
       password,
     });
 
-    await redis.del("user:all");
+    await emailQueue.add("send-email", { email });
 
     return res.status(201).json({
       status: 201,
@@ -87,7 +91,7 @@ export const verifyOTP = async (req, res) => {
       });
     }
 
-    await redis.del(`otp:${email}`)
+    await redis.del(`otp:${email}`);
     return res.json({ message: "Otp Matched" });
   } catch (error) {
     console.log("Failed to send otp");

@@ -14,7 +14,7 @@ userRouter.post("/create-user", createUser);
 
 userRouter.get("/", rateLimiter, getUser);
 
-userRouter.get("/with-redis", getUserWithRedis);
+userRouter.get("/with-redis", rateLimiter, getUserWithRedis);
 
 userRouter.post("/send-otp", sendOTP);
 
