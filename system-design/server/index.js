@@ -8,11 +8,12 @@ const app = express();
 connectDB();
 
 app.use(express.json());
+const port = process.env.PORT || 5000;
 
-app.get("/", (req, res) => res.send("Server is running"));
+app.get("/", (req, res) => res.send(`Server  ${process.env.SERVER_NAME}`));
 
 app.use("/users", userRouter);
 
-const port = process.env.PORT || 5000;
+
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
