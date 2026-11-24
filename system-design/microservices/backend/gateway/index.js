@@ -8,11 +8,11 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 app.get("/", (req, res) =>
-  res.json({ message: "Welcome to Gateway server..." }),
+  res.json({ message: `Welcome to Gateway server: ${process.env.GATEWAY_NAME}` }),
 );
 
-app.use("/auth", proxy("http://localhost:8001"));
-app.use("/order", proxy("http://localhost:8002"));
-app.use("/product", proxy("http://localhost:8003"));
+app.use("/auth", proxy("http://auth-service:8001"));
+app.use("/order", proxy("http://order-service:8002"));
+app.use("/product", proxy("http://product-service:8003"));
 
 app.listen(port, () => console.log(`Gateway server running on port ${port}`));
