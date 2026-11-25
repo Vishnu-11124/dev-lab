@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import "dotenv/config";
 import { GoogleGenAI } from "@google/genai";
 
@@ -70,6 +70,20 @@ app.post("/ai", async (req, res) => {
     });
   }
 });
+
+// const main = async () => {
+//   response = await ai.models.generateContent({
+//     model: "gemini-3.6-flash",
+//     contents: "hello",
+//   });
+//   if(response){
+//   console.log("Result:", response.data);
+//   }else{
+//   console.log("Not available")
+//   }
+// };
+
+// main();
 
 // Start server
 app.listen(port, () => {
