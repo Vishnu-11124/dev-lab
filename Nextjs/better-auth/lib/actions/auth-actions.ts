@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { auth } from "../auth";
+import { redirect } from "next/navigation";
 
 interface UserSignUpInfo {
   email: string;
@@ -37,6 +38,19 @@ export const signIn = async ({ email, password }: UserSignInInfo) => {
   });
 
   return result;
+};
+
+export const signInSocial = async (provider: "github" | "google") => {
+  const { url } = await auth.api.signInSocial({
+    body: {
+      provider,
+      callbackURL: "/dashboard",
+    },
+  });
+
+  if (url) {
+    redirect(url);
+  }
 };
 
 export const signOut = async () => {

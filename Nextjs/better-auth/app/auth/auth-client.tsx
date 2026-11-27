@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { signIn, signUp } from "@/lib/actions/auth-actions";
+import { signIn, signInSocial, signUp } from "@/lib/actions/auth-actions";
 
 export default function AuthClientPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -21,7 +21,7 @@ export default function AuthClientPage() {
     setError("");
 
     try {
-      console.log("Logged in with", provider);
+      await signInSocial(provider);
     } catch (err) {
       setError(
         `Error authenticating with ${provider}: ${
@@ -41,13 +41,13 @@ export default function AuthClientPage() {
     try {
       if (isSignIn) {
         const result = await signIn({ email, password });
-        if(!result.user){
-          setError("Invalid email or password")
+        if (!result.user) {
+          setError("Invalid email or password");
         }
       } else {
-        const result = await signUp({ email, password, name })
-        if(!result.user){
-          setError("Failed to create account")
+        const result = await signUp({ email, password, name });
+        if (!result.user) {
+          setError("Failed to create account");
         }
       }
     } catch (err) {
